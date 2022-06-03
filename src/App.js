@@ -1,11 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
+import Header from './components/Header';
+import { useState } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 function App() {
-  return (
+  const [twitterFollowersCount, setTwitterFollowrCount]=useState(0)
+  const [discordMemberCount, setDiscordMemberCount] = useState(0)
+
+  const [supply, setSupply] = useState(0)
+  const [whiteListCount, setWhiteListCount] = useState(0)
+
+  return ( 
     <div className="App">
-      <header className="App-header">
+      <Header></Header>
+     {/*  <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -17,9 +26,14 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+
+      </header> */}
+
+      <div
+      id="about"
+      ></div>
     </div>
   );
 }
-
+ 
 export default App;
