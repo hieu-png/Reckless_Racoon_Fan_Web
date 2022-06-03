@@ -11,10 +11,10 @@ import discord_big_outline from "../assets/icon/discord_big_outline.svg";
 import twitter_big_outline from "../assets/icon/twitter_big_outline.svg";
 import instagram_big_outline from "../assets/icon/instagram_big_outline.svg";
 import { discordInviteCode, twitterHandle, instagramName } from "../constant";
-
+import { primaryColor } from "../constant";
 export default function Header() {
     return (
-        <AppBar position="static">
+        <AppBar position="static" >
             <Toolbar>
 
                 {/* The Typography component applies 

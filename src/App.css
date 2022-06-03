@@ -1,6 +1,6 @@
 .App {
-  text-align: center;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -13,7 +13,7 @@
   pointer-events: none;
 }
 
-.Text-and-image {
+.Text-and-image { 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -21,9 +21,15 @@
   padding-right: 100px;
   padding-bottom: 25px;
 }
+.Team-list {
+  width: 60%;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 25px;
+}
 .About-image {
+  width:auto;
   border-radius: 10%;
-  padding-left: 25px;
 }
 .Main-image {
   min-height: 100vh;
