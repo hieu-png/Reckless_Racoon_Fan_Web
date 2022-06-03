@@ -16,16 +16,7 @@ export default function Header() {
     return (
         <AppBar position="static">
             <Toolbar>
-                {/*Inside the IconButton, we  
-           can render various icons*/}
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu" 
-                    sx={{ mr: 2 }}
-                >
-                </IconButton>
+
                 {/* The Typography component applies 
            default font weights and sizes */}
 
@@ -34,10 +25,27 @@ export default function Header() {
                     component="div" sx={{ flexGrow: 1 }}>
                     
                 </Typography>
-                <Button color="inherit"><img src={discord_big_outline} className="Go to discord" alt="logo"/></Button>
-                
-                {instagramName !== "" && <Button color="inherit"><img src={instagram_big_outline} className="Go to install" alt="logo" /></Button>}
-            </Toolbar> s
+                {discordInviteCode !== "" &&
+                    <Button href={`https://discord.com/invite/${discordInviteCode}`}
+                        target="_blank" rel="noopener noreferrer"
+                        color="inherit">
+                        <img src={discord_big_outline} alt="join discord server" />
+                    </Button>}
+                    
+                {twitterHandle !== "" &&
+                    <Button href={`https://twitter.com/${twitterHandle}`}
+                        target="_blank" rel="noopener noreferrer"
+                        color="inherit">
+                        <img src={twitter_big_outline} alt="open twitter Page" />
+                    </Button>}
+
+                {instagramName !== "" && 
+                <Button href={`https://www.instagram.com/${instagramName}`} 
+                        target="_blank" rel="noopener noreferrer"
+                        color="inherit">
+                            <img src={instagram_big_outline} alt="open instagram page" />
+                </Button>}
+            </Toolbar>
         </AppBar>
     );
 } 
