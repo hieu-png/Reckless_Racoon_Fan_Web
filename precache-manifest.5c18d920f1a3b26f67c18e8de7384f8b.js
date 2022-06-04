@@ -140,12 +140,12 @@ self.__precacheManifest = [
     "url": "/Reckless_Racoon_Fan_Web/static/media/instagram_big_outline.6b6ebb40.svg"
   },
   {
-    "revision": "34f9dff90ce072a48379d852bab181c0",
-    "url": "/Reckless_Racoon_Fan_Web/static/media/forever.34f9dff9.otf"
-  },
-  {
     "revision": "9c2a5a0ad1ada8b84e3a37c16ed12343",
     "url": "/Reckless_Racoon_Fan_Web/static/media/franken.9c2a5a0a.otf"
+  },
+  {
+    "revision": "34f9dff90ce072a48379d852bab181c0",
+    "url": "/Reckless_Racoon_Fan_Web/static/media/forever.34f9dff9.otf"
   },
   {
     "revision": "37331c05e1ba5505d7535b4fb04382fa",

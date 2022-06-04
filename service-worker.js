@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Reckless_Racoon_Fan_Web/precache-manifest.a79d3242149d181f343187853bc65bb8.js"
+  "/Reckless_Racoon_Fan_Web/precache-manifest.5c18d920f1a3b26f67c18e8de7384f8b.js"
 );
 
 workbox.clientsClaim();
