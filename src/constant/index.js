@@ -3,7 +3,7 @@ import * as teamAvatar from '../assets/teams'
 
 export const discordInviteCode = "recklessracoon" 
 export const twitterHandle = "rracoonclub"
-export const instagramName = "s"
+export const instagramName = ""
 export const backgroundColor = "#F2F3F3"
 export const primaryColor = "#365483"
 export const iconColor = "black"
