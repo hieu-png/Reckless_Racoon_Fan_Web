@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1b15f3cf13f4cbc77ee5",
+    "revision": "4cb2667136f5409881c8",
     "url": "/Reckless_Racoon_Fan_Web/static/css/main.23f4ec4f.chunk.css"
   },
   {
-    "revision": "1b15f3cf13f4cbc77ee5",
-    "url": "/Reckless_Racoon_Fan_Web/static/js/main.575bfdfc.chunk.js"
+    "revision": "4cb2667136f5409881c8",
+    "url": "/Reckless_Racoon_Fan_Web/static/js/main.12e8d71d.chunk.js"
   },
   {
     "revision": "59776dc8e6b621f1bf3e",
@@ -148,7 +148,7 @@ self.__precacheManifest = [
     "url": "/Reckless_Racoon_Fan_Web/static/media/forever.34f9dff9.otf"
   },
   {
-    "revision": "37331c05e1ba5505d7535b4fb04382fa",
+    "revision": "30f980dd43dfabad04d3b86537c1c059",
     "url": "/Reckless_Racoon_Fan_Web/index.html"
   }
 ];
