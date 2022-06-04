@@ -3,6 +3,7 @@ import sneakPeek2 from './2.png'
 import sneakPeek3 from './3.png'
 import sneakPeek4 from './4.png'
 import sneakPeek5 from './5.png'
+import sneakPeek6 from './6.png'
 
 
 export {

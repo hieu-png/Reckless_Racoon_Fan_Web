@@ -10,16 +10,26 @@ import IconButton from "@mui/material/IconButton";
 import discord_big_outline from "../assets/icon/discord_big_outline.svg";
 import twitter_big_outline from "../assets/icon/twitter_big_outline.svg";
 import instagram_big_outline from "../assets/icon/instagram_big_outline.svg";
-import { discordInviteCode, twitterHandle, instagramName } from "../constant";
-import { primaryColor } from "../constant";
+import { discordInviteCode, twitterHandle, instagramName, titleColor } from "../constant";
 export default function Header() {
     return (
-        <AppBar position="static" >
+        <AppBar position="static" color="transparent" elevation={0}>
             <Toolbar>
 
                 {/* The Typography component applies 
            default font weights and sizes */}
+                <Typography
+                    variant="h2"
+                    component="div"
+                    sx={{
+                        flexGrow: 1,
+                        fontFamily:  "Forever",
+                        color: titleColor,
+                        textAlign: 'center',
 
+                    }}>
+                    Reckless Racoon Club
+                </Typography>
 
                 <Typography variant="h6"
                     component="div" sx={{ flexGrow: 1 }}>

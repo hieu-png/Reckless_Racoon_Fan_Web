@@ -40,8 +40,6 @@ export default function TextInBox(props) {
                     fontFamily: "Franken",
                     fontSize: props.fontSize,
                     color: textColor,
-
-
                 }}>
 
                 {props.textContent}
