@@ -31,7 +31,8 @@ export default function ImageCard(props) {
             <Typography variant="h5"
                 component="div" sx={{
                     width: ITEM_WIDTH,
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontWeight: 'bold'
                 }}>
                 {props.nickname}
             </Typography>

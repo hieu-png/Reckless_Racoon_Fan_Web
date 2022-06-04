@@ -1,14 +1,14 @@
 import './App.css';
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header, TextInBox, ImageCard, Statistic, SectionTitle } from './components';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { Grid, AccordionDetails, AccordionSummary, Accordion, Typography } from '@mui/material';
+import { Grid, AccordionDetails, AccordionSummary, Accordion, Typography, ImageList, ImageListItem } from '@mui/material';
 import { themeAbout, collectionAbout, pagingElementHeight } from './constant';
 import { aboutCollection, aboutTheme1, background } from './assets/image';
 import { getNumberOfDiscordMember, getTwitterInfo, getWLStatus } from "./api";
+import { sneakPeeksList, images, updateImage } from "./assets/sneakpeeks/"
 import { discordInviteCode, twitterHandle, instagramName, teams, backgroundColor, textColor, faq, titleColor } from "./constant";
-import { json } from 'react-router-dom';
 var callAPI = false;
 function App() {
   const [twitterFollowersCount, setTwitterFollowerCount] = useState(241300)
@@ -33,7 +33,8 @@ function App() {
         })
         .catch(err => {
           alert(err)
-        })    }
+        })
+    }
   }, []);
 
   return (
@@ -56,7 +57,7 @@ function App() {
 
       </div>
       <SectionTitle
-        title='This is a fan-made website and not an official one'
+        title='This is a fan-made website and not an official website'
         variant='h3'
         font='Franken'
       />
@@ -67,11 +68,11 @@ function App() {
         <TextInBox
           width='40%'
           height={pagingElementHeight}
-          paddingLeft='150px'
-          paddingTop='40px'
-          paddingRight='150px'
-          fontSize='1.8vw'
-          
+          paddingLeft='160px'
+          paddingTop='50px'
+          paddingRight='160px'
+          fontSize='3vw'
+
           textContent={themeAbout}
         />
 
@@ -95,6 +96,22 @@ function App() {
 
       </div>
       <SectionTitle
+        title='Sneak peeks'
+      />
+      <div id="sneakPeeks" className="Section">
+        <ImageList variant="masonry" cols={3} gap={8}>
+          {sneakPeeksList.map((image) => (
+            <ImageListItem key={image}>
+              <img
+                src={`${image}?w=248&fit=crop&auto=format`}
+                srcSet={`${image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
+      <SectionTitle
         title='Statistic'
       />
       <div id="stat" className='Section'>
@@ -105,7 +122,7 @@ function App() {
           alignItems="center"
           columnSpacing={{ xs: 3, sm: 3, md: 3 }}
           spacing={4}>
-          <Grid item xs={3}>
+          <Grid item xs={6} sm={3} md={3} >
             <Statistic
               height='120'
               width='200'
@@ -114,7 +131,7 @@ function App() {
               flavorText='members'
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={6} sm={3} md={3} >
             <Statistic
               height='120'
               width='200'
@@ -124,7 +141,7 @@ function App() {
 
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={6} sm={3} md={3} >
             <Statistic
               height='120'
               width='200'
@@ -134,7 +151,7 @@ function App() {
 
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={6} sm={3} md={3} >
             <Statistic
               height='120'
               width='200'
@@ -148,48 +165,42 @@ function App() {
 
 
       </div>
-      <div id="sneakPeeks">
-
-      </div>
-
       <SectionTitle
         title='Teams'
       />
       <div id="aboutTeam" className='Team-list Section'>
 
-        {
-          <Grid
-            container
-            spacing={2}
-            columns={{ xs: 2, sm: 4, md: 12 }}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            alignSelf="center"
-          >
-            {Array.from(teams).map((member, index) => (
-              <Grid item xs={1} sm={3} md={3} key={index}>
-                <ImageCard
-                  profile={member.profile}
-                  nickname={member.nickname}
-                  title={member.title}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        }
+
+        <Grid
+          container
+          spacing={2}
+          columns={{ xs: 2, sm: 4, md: 12 }}
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          {Array.from(teams).map((member, index) => (
+            <Grid item xs={1} sm={3} md={3} key={index}>
+              <ImageCard
+                profile={member.profile}
+                nickname={member.nickname}
+                title={member.title}
+              />
+            </Grid>
+          ))}
+        </Grid>
+
 
 
       </div>
       <SectionTitle
         title='FAQ'
       />
-      <div id="faq" className="section">
+      <div id="faq" className="Section Faq">
         {faq.map(item => {
           return (
-
             <Accordion sx={{
-                width:'60%',
+              
             }}>
 
               <AccordionSummary
@@ -205,9 +216,9 @@ function App() {
                     flexGrow: 1,
                     fontFamily: "Franken",
                     color: titleColor,
-                    fontSize: '26px',
-                    boxShadow: 0
-
+                    fontSize: '24px',
+                    boxShadow: 0,
+                    fontWeight: 'bold'
 
                   }}
                 >{item.question}
@@ -215,9 +226,9 @@ function App() {
               </AccordionSummary>
 
               <AccordionDetails
-              sx={{
+                sx={{
                   backgroundColor: `${backgroundColor}`
-              }}
+                }}
               >
                 <Typography
                   sx={{

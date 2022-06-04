@@ -2,7 +2,7 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-
+  
 }
 @font-face {
   font-family: "Franken";
@@ -12,7 +12,10 @@
   font-family: "Forever";
   src: local("Forever"), url(./assets/fonts/forever.otf) format("opentype");
 }
+.Faq {
+  width:60%
 
+}
 
 .Text-and-image { 
   display: flex;
@@ -28,13 +31,19 @@
   width:auto;
   border-radius: 5%;
 }
+.Self-middle {
+  flex-direction: row;
+}
 .Section {
   padding-left: 150px;
   padding-right: 150px;
   padding-bottom: 100px;
   align-content: center;
   align-items: center;
+  margin: auto;
+
 }
+
 .Main-image {
   min-height: 100vh;
   width: 100%;

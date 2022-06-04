@@ -20,7 +20,7 @@ export default function Statistic(props) {
                 width: props.width,
                 height: props.height,
                 backgroundImage: `url(${cardBox})`,
-                backgroundSize: '100% 100%',
+                backgroundSize: '100% 101%',
 
                 alignItems: 'center',
                 justifyContent: 'center',
