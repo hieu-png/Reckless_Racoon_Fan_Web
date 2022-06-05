@@ -9,8 +9,8 @@ export default function SectionTitle(props) {
             component="div"
             sx={{
                 flexGrow: 1,
-                fontFamily:  props.font != undefined ? props.font : "Forever" ,
-                color: titleColor,
+                fontFamily:  props.font != undefined ? props.font : "TitleText" ,
+                color: props.fontColor != undefined ? props.fontColor :  titleColor ,
                 textAlign: 'center', 
                 /* position: 'absolute',
                 top: '50%',

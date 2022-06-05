@@ -5,20 +5,24 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { Grid, AccordionDetails, AccordionSummary, Accordion, Typography, ImageList, ImageListItem } from '@mui/material';
 import { themeAbout, collectionAbout, pagingElementHeight } from './constant';
-import { aboutCollection, aboutTheme1, background } from './assets/image';
+import { aboutCollection, aboutTheme1, aboutTheme2, background } from './assets/image';
 import { getNumberOfDiscordMember, getTwitterInfo, getWLStatus } from "./api";
 import { sneakPeeksList, images, updateImage } from "./assets/sneakpeeks/"
-import { discordInviteCode, twitterHandle, instagramName, teams, backgroundColor, textColor, faq, titleColor } from "./constant";
+import {
+  discordInviteCode, twitterHandle, instagramName, teams,
+  backgroundColor, textColor, faq, titleColor,
+  twitterFollowersCount, discordMemberCount, supplyCount, whiteListCount, nftname
+} from "./constant";
 var callAPI = false;
 function App() {
-  const [twitterFollowersCount, setTwitterFollowerCount] = useState(241300)
-  const [discordMemberCount, setDiscordMemberCount] = useState(111390)
-  const [supply, setSupply] = useState(8888)
-  const [whiteListCount, setWhiteListCount] = useState(5751)
+  /*   const [twitterFollowersCount, setTwitterFollowerCount] = useState(241300)
+    const [discordMemberCount, setDiscordMemberCount] = useState(111390)
+    const [supply, setSupply] = useState(8888)
+    const [whiteListCount, setWhiteListCount] = useState(5751) */
 
   //approximate_member_count
   useEffect(() => {
-    if (callAPI) {
+    /* if (callAPI) {
       getNumberOfDiscordMember(discordInviteCode)
         .then(res => {
           //console.log(res.data["approximate_member_count"])
@@ -34,7 +38,7 @@ function App() {
         .catch(err => {
           alert(err)
         })
-    }
+    } */
   }, []);
 
   return (
@@ -43,52 +47,49 @@ function App() {
       backgroundPosition: 'center',
     }}>
       <Header></Header>
-      <div id="#disclaimer"
-        style={{
-          backgroundImage: `url(${aboutTheme1})`,
-          height: '1000px',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          position: 'relative',
 
-        }}
-      >
 
-      </div>
-      <SectionTitle
-        title='This is a fan-made website and not an official website'
-        variant='h3'
-        font='Franken'
-      />
-      <SectionTitle
-        title='About'
-      />
-      <div id="#aboutTheme" className='Text-and-image Section'>
+
+      <div id="#aboutTheme" className='About-theme Section'>
+        <div style={{
+          height: '30%'
+
+        }} />
+        {/*  */}
         <TextInBox
-          width='40%'
+          width='70%'
           height={pagingElementHeight}
-          paddingLeft='160px'
+          textWidth='80%'
           paddingTop='50px'
-          paddingRight='160px'
-          fontSize='3vw'
-
+          margin='auto'
+          fontSize='3vmax'
           textContent={themeAbout}
         />
 
 
       </div>
+      <div className='Section'>
+        <SectionTitle
+          title='This is a fan-made website and not an official website'
+          variant='h4'
+          font='NormalText'
+        />
 
+      </div>
 
-      <div id="#aboutCollection" className='Text-and-image Section'>
-        <img src={aboutCollection} height={pagingElementHeight} width="40%" className='About-image' />
+      <SectionTitle
+        title='About'
+      />
+      <div id="aboutCollection" className='About-collection Section'>
+
+        <img src={aboutCollection} width="40%" className='About-image' />
         <Typography
           display="inline"
           sx={{
             flexGrow: 1,
-            fontFamily: "Franken",
+            fontFamily: "NormalText",
             color: titleColor,
-            fontSize: '1.5vw',
+            fontSize: '1.5vmax',
 
           }}
         >{collectionAbout}
@@ -96,9 +97,9 @@ function App() {
 
       </div>
       <SectionTitle
-        title='Sneak peeks'
+        title='The sneak peeks so far'
       />
-      <div id="sneakPeeks" className="Section">
+      <div id="sneakPeeks" className="Section Sneak-peeks">
         <ImageList variant="masonry" cols={3} gap={8}>
           {sneakPeeksList.map((image) => (
             <ImageListItem key={image}>
@@ -112,9 +113,9 @@ function App() {
         </ImageList>
       </div>
       <SectionTitle
-        title='Statistic'
+        title='Some statistic'
       />
-      <div id="stat" className='Section'>
+      <div id="stat" className='Section Statistic'>
 
         <Grid container
           direction="row"
@@ -146,8 +147,8 @@ function App() {
               height='120'
               width='200'
               title='Supply'
-              numericalString={supply}
-              flavorText='racoons'
+              numericalString={supplyCount}
+              flavorText={nftname}
 
             />
           </Grid>
@@ -166,7 +167,7 @@ function App() {
 
       </div>
       <SectionTitle
-        title='Teams'
+        title='Who are the team'
       />
       <div id="aboutTeam" className='Team-list Section'>
 
@@ -174,13 +175,12 @@ function App() {
         <Grid
           container
           spacing={2}
-          columns={{ xs: 2, sm: 4, md: 12 }}
           direction="row"
           justifyContent="center"
           alignItems="center"
         >
           {Array.from(teams).map((member, index) => (
-            <Grid item xs={1} sm={3} md={3} key={index}>
+            <Grid item key={index}>
               <ImageCard
                 profile={member.profile}
                 nickname={member.nickname}
@@ -194,13 +194,14 @@ function App() {
 
       </div>
       <SectionTitle
-        title='FAQ'
+        title='Frequently asked questions'
       />
       <div id="faq" className="Section Faq">
         {faq.map(item => {
           return (
             <Accordion sx={{
-              
+              boxShadow: 0,
+
             }}>
 
               <AccordionSummary
@@ -208,16 +209,16 @@ function App() {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 sx={{
-                  backgroundColor: `${backgroundColor}`
+                  backgroundColor: `${backgroundColor}`,
+
                 }}
               >
                 <Typography
                   sx={{
                     flexGrow: 1,
-                    fontFamily: "Franken",
+                    fontFamily: "NormalText",
                     color: titleColor,
                     fontSize: '24px',
-                    boxShadow: 0,
                     fontWeight: 'bold'
 
                   }}
@@ -227,15 +228,16 @@ function App() {
 
               <AccordionDetails
                 sx={{
-                  backgroundColor: `${backgroundColor}`
+                  backgroundColor: `${backgroundColor}`,
+
                 }}
               >
                 <Typography
                   sx={{
                     flexGrow: 1,
-                    fontFamily: "Franken",
+                    fontFamily: "NormalText",
                     color: titleColor,
-                    fontSize: '22px'
+                    fontSize: '22px',
 
                   }}
                 >{item.answer}

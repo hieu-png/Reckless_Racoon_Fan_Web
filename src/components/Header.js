@@ -8,7 +8,7 @@ import { AppBar, Box, Toolbar, Typography, Button, Link, IconButton, useScrollTr
 import discord_big_outline from "../assets/icon/discord_big_outline.svg";
 import twitter_big_outline from "../assets/icon/twitter_big_outline.svg";
 import instagram_big_outline from "../assets/icon/instagram_big_outline.svg";
-import { discordInviteCode, twitterHandle, instagramName, backgroundColor } from "../constant";
+import { discordInviteCode, twitterHandle, instagramName, backgroundColor, projectName } from "../constant";
 
 function HideOnScroll(props) {
     const { children, window } = props;
@@ -42,18 +42,18 @@ export default function Header(props) {
                         component="div"
                         sx={{
                             flexGrow: 1,
-                            fontFamily: "Forever",
+                            fontFamily: "TitleText",
                             color: backgroundColor,
                             textAlign: 'center',
                         }}>
-                        Reckless Racoon Club
+                        {projectName}
                     </Typography>
                     <Link
                         href="#aboutCollection"
                         variant="h5"
                         sx={{
                             flexGrow: 1,
-                            fontFamily: "Forever",
+                            fontFamily: "TitleText",
                             color: backgroundColor,
                             textAlign: 'center',
                         }}>About
@@ -63,7 +63,7 @@ export default function Header(props) {
                         variant="h5"
                         sx={{
                             flexGrow: 1,
-                            fontFamily: "Forever",
+                            fontFamily: "TitleText",
                             color: backgroundColor,
                             textAlign: 'center',
                         }}>Sneak peeks
@@ -73,7 +73,7 @@ export default function Header(props) {
                         variant="h5"
                         sx={{
                             flexGrow: 1,
-                            fontFamily: "Forever",
+                            fontFamily: "TitleText",
                             color: backgroundColor,
                             textAlign: 'center',
                         }}>Statistic
@@ -84,7 +84,7 @@ export default function Header(props) {
                         variant="h5"
                         sx={{
                             flexGrow: 1,
-                            fontFamily: "Forever",
+                            fontFamily: "TitleText",
                             color: backgroundColor,
                             textAlign: 'center',
                         }}>Teams
@@ -94,7 +94,7 @@ export default function Header(props) {
                         variant="h5"
                         sx={{
                             flexGrow: 1,
-                            fontFamily: "Forever",
+                            fontFamily: "TitleText",
                             color: backgroundColor,
                             textAlign: 'center',
                         }}>FAQs

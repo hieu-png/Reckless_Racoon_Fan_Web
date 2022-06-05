@@ -2,46 +2,92 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-  
+  min-width: 20%;
+}
+
+.bottomImage {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+@keyframes mainCoverTransition {
+  from {
+    background-image: url(./assets/image/aboutTheme1.png);
+  }
+  to {
+    background-image: url(./assets/image/aboutTheme2.png);
+  }
+}
+
+.Main-cover {
+  /*animation-direction: alternate-reverse;
+  animation-duration: 0.7s;
+
+   height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 @font-face {
-  font-family: "Franken";
-  src: local("Franken"), url(./assets/fonts/franken.otf) format("opentype");
+  font-family: "NormalText";
+  src: local("NormalText"), url(./assets/fonts/franken.otf) format("opentype");
 }
 @font-face {
-  font-family: "Forever";
-  src: local("Forever"), url(./assets/fonts/forever.otf) format("opentype");
+  font-family: "TitleText";
+  src: local("TitleText"), url(./assets/fonts/forever.otf) format("opentype");
 }
 .Faq {
-  width:60%
-
+  width: 48%;
 }
+.About-theme {
+  background-image: linear-gradient(
+      to bottom,
+      #36548300,
+      #f2f3f3fd
+    ),
+    url(./assets/image/aboutTheme1.png);
 
-.Text-and-image { 
+  height: 1000px;
+
+  align-items: center;
+  align-content: center;
+  
+}
+.About-collection {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
+  width: 80%;
 }
 .Team-list {
-  width: 50%;
-
+  max-width: 45%;
 }
 .About-image {
-  width:auto;
+  width: 40%;
   border-radius: 5%;
 }
 .Self-middle {
   flex-direction: row;
 }
+.Statistic {
+    width: 80%;
+
+}
+.Sneak-peeks {
+    width: 80%;
+
+}
 .Section {
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-bottom: 100px;
+/*   padding-left: 250px;
+  padding-right: 250px; */
+  padding-bottom: 200px;
   align-content: center;
   align-items: center;
   margin: auto;
-
+  
 }
 
 .Main-image {

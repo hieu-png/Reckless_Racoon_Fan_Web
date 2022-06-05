@@ -14,30 +14,22 @@ export default function TextInBox(props) {
                 height: props.height,
                 backgroundImage: `url(${textBox})`,
                 backgroundSize: '100% 100%',
-                flex: 1
+                flex: 1,
+                alignItems:'center',
+                alignContent:'center',
+                margin:'auto'
             }}
         >
-            {/* <p style={{
-                paddingLeft: props.paddingLeft,
-                paddingTop: props.paddingTop,
-                paddingRight: props.paddingRight,
-                fontFamily: "Franken",
-                fontSize: props.fontSize,
-                color:'white',
-                flex:1
-            }}
-            >
-                
-                {}
-            </p> */}
             <Typography variant="h8"
                 component="div"
                 sx={{
-                    flexGrow: 1,
+                    width: props.textWidth,
                     paddingLeft: props.paddingLeft,
                     paddingTop: props.paddingTop,
                     paddingRight: props.paddingRight,
-                    fontFamily: "Franken",
+                    fontFamily: "NormalText",
+                    textAlign: 'center', 
+                    margin:'auto',
                     fontSize: props.fontSize,
                     color: textColor,
                 }}>
