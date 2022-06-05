@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Reckless_Racoon_Fan_Web/precache-manifest.a303bb86043b59567717b4689c0ffd8e.js"
+  "/Khugas/precache-manifest.0703daa231b6c51a74cc018890c27f4b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Reckless_Racoon_Fan_Web/index.html", {
+workbox.routing.registerNavigationRoute("/Khugas/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
